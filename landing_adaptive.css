@@ -40,7 +40,7 @@
     .time{
     	width: 450px;
         position: absolute;
-        transform: translate(-45px, 670px);
+        transform: translate(-28px, 670px);
         padding: 35px;
     }
 
@@ -113,7 +113,7 @@
         padding: 25px;
         position: absolute;
         transform: translate(-33px, 460px);
-        width: 250px; 
+        width: 260px; 
  
     }
     .time>.beforeStart{
