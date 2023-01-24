@@ -1,3 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=PT+Serif&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+a:hover {
+	text-decoration: none;
+}
+
 body {
 	margin: 0%;
 	padding: 0%;
@@ -12,7 +24,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 .LogoHeader {
 	height: 100px;
@@ -20,7 +32,7 @@ body {
 	text-align: center;
 }
 .LogoHeader img {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .logoNav {
@@ -28,7 +40,7 @@ body {
 	justify-content: space-evenly;
 	align-items: center;
 	height: 100px;
-	width: 400px;
+	width: 510px;
 }
 .logoNews {
 	font-family: "Inter";
@@ -40,7 +52,7 @@ body {
 	color: #000000;
 }
 .logoNews p {
-    cursor: pointer;
+	cursor: pointer;
 }
 .logoTelegram {
 	display: flex;
@@ -50,7 +62,7 @@ body {
 	height: 40px;
 	background: #26a4e3;
 	border-radius: 2px;
-    cursor: pointer;
+	cursor: pointer;
 }
 .logoTelegram img {
 	width: 24px;
@@ -63,4 +75,100 @@ body {
 	font-size: 18px;
 	line-height: 22px;
 	color: #ffffff;
+}
+
+/* main css */
+
+.main1-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 45px;
+	margin-top: 60px;
+}
+.sectionTitle {
+	max-width: 700px;
+	margin-top: 40px;
+}
+.sectionTitle > h1 {
+	font-weight: 900;
+	font-size: 68px;
+	line-height: 84px;
+}
+.time {
+	display: block;
+	justify-content: center;
+	width: 720px;
+	height: 160px;
+	background: #ff7e2d;
+	border-radius: 8px;
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.beforeStart {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 22px;
+	color: #ffffff;
+}
+.date {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 34px;
+	color: #ffffff;
+}
+
+.sectionImgBlock {
+	display: grid;
+	grid-template-columns: repeat(2, 255px);
+	grid-template-rows: repeat(3, 230px);
+	gap: 5px;
+}
+.big2 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	transform: translateY(-20px);
+}
+
+/* block 2 */
+
+.main2-wrapper {
+	width: 1300px;
+	margin-left: 66px;
+}
+.QuestionAnswer {
+	border-top: 1.5px solid #492dff;
+}
+.blockQA {
+	display: flex;
+	justify-content: center;
+	font-size: 32px;
+	line-height: 40px;
+	gap: 20px;
+}
+.question {
+	display: flex;
+	width: 600px;
+	height: 200px;
+	align-items: center;
+	gap: 30px;
+}
+.question span{
+	color: #4453D9;
+}
+.answer span{
+	color: #4453D9;
+}
+.answer {
+	display: flex;
+	width: 600px;
+	height: 200px;
+	align-items: center;
+	gap: 30px;
 }
