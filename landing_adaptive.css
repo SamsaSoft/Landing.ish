@@ -6,7 +6,7 @@
         padding: 30px 0 20px;
     }
     .sectionTitle{
-     transform: translateY(0px);
+        transform: translateY(0px);
     }
     .sectionTitle>h1{
         font-size: 50px;
@@ -68,14 +68,8 @@
         padding: 20px 0;
         gap: 15px;
     }
-    .headerLogo{
-        gap: 2px;
-        font-size: 18px;
-        line-height: 20px;
-    }
     .headerLogo>img{
-        width: 30px;
-        height: 30px;
+        width: 60px;
     }
 
     .headerNav{
@@ -91,10 +85,10 @@
         width: 10px;
         height: 10px;
     }
-    .headerNav>.news{
+    /* .headerNav>.menuNav{
         font-size: 9px;
         line-height: 8px;
-    }
+    } */
 
 
     .main_1{
@@ -201,5 +195,42 @@
     .conditions>a{
         text-decoration-line: underline;
         color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .sectionImgBlock{
+        grid-template-columns: repeat(2, 140px);
+        grid-template-rows: repeat(3, 125px);
+    }
+    .sectionImgBlock>img{
+        width: 140px;
+    }
+    .sectionImgBlock>.big1{
+        width: 140px;
+        height: 194%;
+    }
+    .sectionImgBlock>.big2{
+        width: 280px;
+        transform: translateY(-10px);
+    }
+
+    .time{
+        padding: 15px;
+        transform: translate(-30px, 380px);
+        width: 260px; 
+ 
+    }
+
+    .mail>input{
+        width: 230px;
+        padding: 13px;
+    }
+    .mail>button{
+        font-size: 20px;
+        padding: 13px 60px;
+    }
+    .conditions{
+        font-size: 13px;
     }
 }
