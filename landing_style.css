@@ -14,6 +14,11 @@ a:hover  {
 }
 
 
+body{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 .container{
     margin: 0 auto;
     padding: 0 118px;
@@ -22,7 +27,7 @@ a:hover  {
 header{
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 15px 0 0;
 }
 .headerLogo{
     display: flex;
@@ -38,7 +43,7 @@ header{
 }
 .headerNav{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 22px;
 }
 .headerNav>.telegram{
@@ -47,6 +52,7 @@ header{
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
+    margin-top: 7px;
     background: #26A4E3;
     border-radius: 2px;
     font-size: 18px;
@@ -59,12 +65,6 @@ header{
     background: #ffffff;
     color: #26A4E3;
 }
-/* .headerNav>.menuNav{
-    text-decoration-line: underline;
-    font-size: 18px;
-    line-height: 22px;
-    color: #000000;
-} */
 
 
 .main_1{
@@ -161,6 +161,7 @@ footer h2{
     line-height: 66px;
     color: #F9F9F9;
     margin-bottom: 15px;
+    letter-spacing: 5px;
 }
 footer h5{
     font-weight: 400;
