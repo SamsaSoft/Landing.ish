@@ -28,3 +28,22 @@ function initializeClock(id, endtime){
   
 initializeClock('.date', deadline);
   
+
+
+// const input = document.querySelector(".inputMail")
+// const btn = document.querySelector("button")
+// console.log(btn)
+
+
+// function ValidateEmail(inputText){
+//   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//   if(inputText.value.match(mailformat)){
+//     console.log("yes");
+//     input.focus();
+//     return true;
+//   }else{
+//     console.log("no");
+//     input.focus();
+//     return false;
+//   }
+// }
