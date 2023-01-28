@@ -39,16 +39,34 @@ initializeClock(".content__time-сountdown", deadline);
 // валидация
 
 
-let validation = new JustValidate('#form')
+let validator = new JustValidate('#form')
 
-validation.addField("#email", [
+validator.addField('#email', [
+  {
+    rule: 'customRegexp',
+    value: /^[A-Za-z0-9][A-Za-z0-9\.\-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$/gi,
+    errorMessage: 'Ошибка'
+  },
   {
     rule: 'required',
-    errorMessage: 'Введите электронную почту'
+    errorMessage: 'Введите правильно'
   },
   {
     rule: 'email',
     errorMessage: 'Ошибка введите правильный электронную почту'
   },
 ])
+
+// let validatorEmail = new JustValidate('#form')
+
+// validatorEmail.addField("#email", [
+//   {
+//     rule: 'required',
+//     errorMessage: 'Введите электронную почту'
+//   },
+//   {
+//     rule: 'email',
+//     errorMessage: 'Ошибка введите правильный электронную почту'
+//   },
+// ])
 
