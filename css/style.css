@@ -144,7 +144,7 @@ ul {
   gap: calc(10px + 20 * ((100vw - 320px) / 1440));
 }
 
-@media (min-width: 125.625rem) {
+@media (min-width: 125rem) {
   .content {
     -ms-grid-rows: 24.375rem auto;
         grid-template-rows: 24.375rem auto;

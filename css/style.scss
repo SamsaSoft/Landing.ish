@@ -140,7 +140,7 @@ $mobileSmall: rem(479.98); // телефоны s
     @include adaptive-value("padding-right", 120, 10);
     @include adaptive-value("padding-top", 50, 5);
     @include adaptive-value("gap", 30, 10);
-    @media (min-width: rem(2010)) {
+    @media (min-width: rem(2000)) {
       grid-template-rows: rem(390) auto;
     }
       @media (max-width: $tablet) {
