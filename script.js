@@ -1,3 +1,6 @@
+
+//--------------Timer------------------
+
 const deadline = 'June 1 2023 00:00:00';
 
 function getTimeRemaining(endtime){  
@@ -30,20 +33,29 @@ initializeClock('.date', deadline);
   
 
 
-// const input = document.querySelector(".inputMail")
-// const btn = document.querySelector("button")
-// console.log(btn)
+//-----------------------Validation-------------------------------------------------------------
 
+const input = document.querySelector("input")
+const button = document.querySelector(".inputClick")
 
-// function ValidateEmail(inputText){
-//   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//   if(inputText.value.match(mailformat)){
-//     console.log("yes");
-//     input.focus();
-//     return true;
-//   }else{
-//     console.log("no");
-//     input.focus();
-//     return false;
-//   }
-// }
+button.addEventListener("click", function(){
+	const mail = input.value
+	const regEx = /^\w+(([\.-])?[!#$%&'*+-/=?^_`{|}~]+\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/
+	const errorSymbols = /(\w*[<>()@,;:\/"*]+\w*)\@/
+	const cyrillic = /[а-яА-Я]/
+
+	const hidden = document.querySelectorAll(".hidden>div")
+	hidden.forEach(div => div.classList.add("none"))
+
+	if(mail.match(cyrillic)){
+		document.getElementById("m1").classList.remove("none")
+	}else{
+		if(mail.match(regEx)){
+			document.getElementById("m2").classList.remove("none")
+		}else if(mail.match(errorSymbols)){
+				document.getElementById("m3").classList.remove("none")
+		}else{
+			document.getElementById("m4").classList.remove("none")
+		}
+	}
+})

@@ -87,14 +87,18 @@
             <h2>Оставьте почту</h2>
             <h5>Мы уведомим о запуске!</h5>
             
-                <form action="">
                     <div class="mail">
-                        <!--  -->
-                        <input class="inputMail" type="email" placeholder="Адрес почты" pattern=".@gmail.com" required>
-                        <!-- onclick=ValidateEmail(input) -->
-                        <button  type="submit">Подписаться</button>
+                        <input class="inputMail" type="email" placeholder="Адрес почты">	
+                            
+                            <div class="hidden">
+                                <div id="m1" class="none">Введите на латинице</div>
+                                <div id="m2" class="none">Ваш запрос отправлен</div>
+                                <div id="m3" class="none">Ошибка! Недопустимые символы</div>
+                                <div id="m4" class="none">Ошибка! Введите правильную электронную почту</div>
+                            </div>
+                        
+                        <button class="inputClick">Подписаться</button>
                     </div>
-                </form>
                 
             <div class="conditions">By continuing, you agree that we will not create an account for you (unless already created), and accept our <a href="">Terms and Conditions</a> and <a href="">Privacy Policy.</a></div>
             <div class="year">© 2022 ISH.KG</div>
