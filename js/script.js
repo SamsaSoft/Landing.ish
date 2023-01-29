@@ -57,16 +57,3 @@ validator.addField('#email', [
   },
 ])
 
-// let validatorEmail = new JustValidate('#form')
-
-// validatorEmail.addField("#email", [
-//   {
-//     rule: 'required',
-//     errorMessage: 'Введите электронную почту'
-//   },
-//   {
-//     rule: 'email',
-//     errorMessage: 'Ошибка введите правильный электронную почту'
-//   },
-// ])
-
