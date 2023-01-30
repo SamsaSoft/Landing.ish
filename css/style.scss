@@ -63,14 +63,14 @@ $mobileSmall: rem(479.98); // телефоны s
       }
 		&__logo {
         width: rem(120);
-        height: rem(70);
+        height: rem(50);
         @media (max-width: $mobile) {
           width: rem(90);
-          height: rem(60);
+          height: rem(40);
         }
         @media (max-width: $mobileSmall) {
           width: rem(60);
-          height: rem(40);
+          height: rem(20);
         }
 		}
 

@@ -45,20 +45,20 @@ ul {
 
 .header__logo {
   width: 7.5rem;
-  height: 4.375rem;
+  height: 3.125rem;
 }
 
 @media (max-width: 47.99875rem) {
   .header__logo {
     width: 5.625rem;
-    height: 3.75rem;
+    height: 2.5rem;
   }
 }
 
 @media (max-width: 29.99875rem) {
   .header__logo {
     width: 3.75rem;
-    height: 2.5rem;
+    height: 1.25rem;
   }
 }
 
