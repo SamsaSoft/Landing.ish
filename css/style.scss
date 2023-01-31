@@ -70,7 +70,7 @@ $mobileSmall: rem(479.98); // телефоны s
         }
         @media (max-width: $mobileSmall) {
           width: rem(60);
-          height: rem(20);
+          height: rem(25);
         }
 		}
 
@@ -701,9 +701,9 @@ $mobileSmall: rem(479.98); // телефоны s
 
       }
 		}
-  
+
 }
- 
+
 .just-validate-error-label {
   font-weight: 500;
   font-size: rem(20);
