@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Платформа для заданий</title>
-  <link type="image/x-icon" href="export/icons/titleLogo.png" rel="shortcut icon">
+  <link type="image/x-icon" href="img/icon/titleLogo.png" rel="shortcut icon">
   <!-- Подключение стилей -->
   <link rel="stylesheet" href="css/style.css" />
   <!-- Подключение стилей -->
@@ -102,10 +102,18 @@
 
         <form action="" autocomplete="off" class="footer__container-form" id="form">
           <div class="footer__container-form-box">
-            <input autocomplete="off" class="footer__container-form-box-input " name="email" id="email" type="text"
+            <input autocomplete="off" class="footer__container-form-box-input" name="email" id="email" type="text"
               placeholder="Адрес почты">
+
+              <div class="hidden">
+                <div id="m1" class="none">Ошибка! Введите на латинице</div>
+                <div id="m2" class="none">Ваш запрос отправлен</div>
+                <div id="m3" class="none">Ошибка! Недопустимые символы</div>
+                <div id="m4" class="none">Ошибка! Введите правильную электронную почту</div>
+            </div>
+
           </div>
-          <button class="footer__container-form-button ">Подписаться</button>
+          <button class="footer__container-form-button">Подписаться</button>
         </form>
 
         <span class="footer__container-rules ">By continuing, you agree that we create an
@@ -124,8 +132,6 @@
 
 <!-- Подключение скриптов -->
 
-<script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
-<script src="js/inputmask.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 
 <!-- Подключение скриптов -->

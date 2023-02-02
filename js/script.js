@@ -36,24 +36,32 @@ function initializeClock(id, endtime) {
 
 initializeClock(".content__time-сountdown", deadline);
 
-// валидация
 
 
-let validator = new JustValidate('#form')
+//-----------------------Validation-------------------------------------------------------------
 
-validator.addField('#email', [
-  {
-    rule: 'customRegexp',
-    value: /^[A-Za-z0-9][A-Za-z0-9\.\-_]*[A-Za-z0-9]*@([A-Za-z0-9]+([A-Za-z0-9-]*[A-Za-z0-9]+)*\.)+[A-Za-z]*$/gi,
-    errorMessage: 'Ошибка'
-  },
-  {
-    rule: 'required',
-    errorMessage: 'Введите правильно'
-  },
-  {
-    rule: 'email',
-    errorMessage: 'Ошибка введите правильный электронную почту'
-  },
-])
+const input = document.querySelector(".footer__container-form-box-input")
+const button = document.querySelector(".footer__container-form-button")
 
+button.addEventListener("click", function(e){
+  e.preventDefault()
+	const mail = input.value
+	const regEx = /^\w+(([\.-])?[!#$%&'*+-/=?^_`{|}~]+\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/
+	const errorSymbols = /(\w*[<>()@,;:\/"*]+\w*)\@/
+	const cyrillic = /[а-яА-Я]/
+
+	const hidden = document.querySelectorAll(".hidden>div")
+	hidden.forEach(div => div.classList.add("none"))
+
+	if(mail.match(cyrillic)){
+		document.getElementById("m1").classList.remove("none")
+	}else{
+		if(mail.match(regEx)){
+			document.getElementById("m2").classList.remove("none")
+		}else if(mail.match(errorSymbols)){
+				document.getElementById("m3").classList.remove("none")
+		}else{
+			document.getElementById("m4").classList.remove("none")
+		}
+	}
+})
