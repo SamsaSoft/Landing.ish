@@ -713,3 +713,32 @@ $mobileSmall: rem(479.98); // телефоны s
 
 //-------footer--------
  
+
+
+
+/*----------change input valid from meder-------------*/
+
+.hidden{
+  >div{
+    padding: 5px 15px 15px;
+    font-size: 23px;
+    font-weight: 1000;
+  }
+  .none{
+    display: none;
+  }
+  #m4, #m3, #m1{
+    color: red;
+  }
+  #m2{
+    color:green;
+  }
+}
+
+@media only screen and (max-width: 730px){
+  .hidden>div{
+    padding: 0 10px 10px;
+    font-size: 15px;
+    font-weight: 800;
+  }
+}
