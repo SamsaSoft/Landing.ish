@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Платформа для заданий</title>
-  <link type="image/x-icon" href="export/icons/titleLogo.png" rel="shortcut icon">
+  <link type="image/x-icon" href="img/icon/Logo.png" rel="shortcut icon">
   <!-- Подключение стилей -->
   <link rel="stylesheet" href="css/style.css" />
   <!-- Подключение стилей -->
@@ -18,108 +18,162 @@
     <!-- HEADER  START-->
 
     <div class="header">
-      <img class="header__logo" src="img/icon/newlogo.png" alt="logo">
-      <div class="header__nav">
-        <!-- <a class="header__nav-news-link" href="">Новости сервиса</a> -->
-        <a class="header__nav-telegram-link telegram-link" href="https://www.t.me/news_ish_kg">
+      <div class="header__block">
+      <img class="header__block__logo" src="img/icon/Logo.png" alt="logo">
+      <div class="header__block-menu">
+        <a href="#main" class="header__block-menu-item">О нас</a>
+        <a href="#info" class="header__block-menu-item">Услуги</a>
+        <a href="#mission" class="header__block-menu-item">Оставить заявку</a>
+      </div>
+      <div class="header__block-nav">
+        <a class="header__block-nav-telegram-link telegram-link" href="https://www.t.me/news_ish_kg">
           <img class="telegram-link__logo" src="img/icon/LogoTelegram.png" alt="telegram">
-          <span class="telegram-link__title">Новости сервиса</span>
+          <span class="telegram-link__title">Новости проекта</span>
         </a>
+      </div>
+      </div>
+      <div class="header__mobile">
+        <a href="#" class="header__mobile-item">О нас</a>
+        <a href="#" class="header__mobile-item">Услуги</a>
+        <a href="#" class="header__mobile-item">Оставить заявку</a>
       </div>
     </div>
     <!-- HEADER  END-->
 
-    <!-- CONTENT START-->
+    <!-- MAIN START-->
 
-    <section class="content">
-      <div class="content__title">
-        <span class="content__title-first content-text ">Поможем</span>
-        <span class="content__title-second content-text">заказчику и</span>
-        <span class="content__title-third content-text">исполнителю</span>
-        <span class="content__title-fourth content-text">найти друг друга!</span>
+    <section id="main" class="main">
+      <span class="main__title">Платформа для заданий</span>
+
+      <div class="main__block">
+        <div class="main__block-text">На нашей платформе вы сможете<br> решить свои вопросы по найму,<br> аренде и заработку!</div>
+      <div class="main__block-img">
+        <img class="main__block-img-picture" src="img/main_img.png" alt="main_img">
       </div>
-      <div class="content__img">
-        <img class="content__img-first" src="img/Image_1.png" alt="Image_1">
-        <img class="content__img-second" src="img/Image_2.png" alt="Image_2">
-        <img class="content__img-third" src="img/Image_3.png" alt="Image_3">
-        <img class="content__img-fourth " src="img/Image_4.png" alt="Image_4">
-      </div>
-      <div class="content__time">
-        <div class="content__time-line"></div>
-        <span class="content__time-title">До запуска:</span>
-        <div class="content__time-сountdown"></div>
+        <div class="main__block-form main-form">
+          <span class="main-form__title">Мы уведомим о запуске!</span>
+          <form action="" autocomplete="off" class="main-form__block" id="form">
+              <input autocomplete="off" class="main-form__block-input " name="email" id="email" type="text"
+                placeholder="Оставьте почту">
+            <button type="submit" class="main-form__block-button "><svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.865 25.935L25.935 20.865C26.2925 20.5075 26.4713 20.0525 26.4713 19.5C26.4713 18.9475 26.2925 18.4925 25.935 18.135L20.8162 13.0163C20.4587 12.6588 20.0122 12.4878 19.4766 12.5034C18.9397 12.5203 18.4925 12.7075 18.135 13.065C17.7775 13.4225 17.5987 13.8775 17.5987 14.43C17.5987 14.9825 17.7775 15.4375 18.135 15.795L19.89 17.55H13.6013C13.0488 17.55 12.5937 17.7365 12.2362 18.1096C11.8787 18.484 11.7 18.9475 11.7 19.5C11.7 20.0525 11.8872 20.5153 12.2616 20.8884C12.6347 21.2628 13.0975 21.45 13.65 21.45H19.89L18.0863 23.2537C17.7288 23.6112 17.5578 24.0585 17.5734 24.5954C17.5903 25.131 17.7775 25.5775 18.135 25.935C18.4925 26.2925 18.9475 26.4713 19.5 26.4713C20.0525 26.4713 20.5075 26.2925 20.865 25.935ZM19.5 39C16.8025 39 14.2675 38.4878 11.895 37.4634C9.5225 36.4403 7.45875 35.0513 5.70375 33.2963C3.94875 31.5413 2.5597 29.4775 1.5366 27.105C0.5122 24.7325 0 22.1975 0 19.5C0 16.8025 0.5122 14.2675 1.5366 11.895C2.5597 9.5225 3.94875 7.45875 5.70375 5.70375C7.45875 3.94875 9.5225 2.55905 11.895 1.53465C14.2675 0.51155 16.8025 0 19.5 0C22.1975 0 24.7325 0.51155 27.105 1.53465C29.4775 2.55905 31.5413 3.94875 33.2963 5.70375C35.0513 7.45875 36.4403 9.5225 37.4634 11.895C38.4878 14.2675 39 16.8025 39 19.5C39 22.1975 38.4878 24.7325 37.4634 27.105C36.4403 29.4775 35.0513 31.5413 33.2963 33.2963C31.5413 35.0513 29.4775 36.4403 27.105 37.4634C24.7325 38.4878 22.1975 39 19.5 39Z" fill="#4453D9"/>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </section>
 
-    <!-- CONTENT END-->
+    <!-- MAIN END-->
 
     <!-- INFO START-->
 
-    <section class="info">
-      <div class="info__line"></div>
-      <div class="info__content">
-        <div class="info__content-questions">
-          <div class="info__content-questions-first">
-            <img class="info-icon " src="img/Question.png" alt="questions">
-            <a href="#" class="info__content-questions-first-text ">Нужно что-то сделать, но
-              нет
-              <br> времени или просто
-              лень?</a>
-          </div>
-          <div class="info__content-questions-second">
-            <img class="info-icon " src="img/Question.png" alt="questions">
-            <a href="#" class="info__content-questions-second-text ">Срочно нужна подработка?
-            </a>
-          </div>
+    <section id="info" class="info">
+      <span class="info__title">КАК ЭТО РАБОТАЕТ?</span>
+      <div class="info__text">
+      <span >ISH.KG - это самая удобная платформа для тех, кто ищет помощь и кто ищет дополнительный заработок!
+          Это беспроигрышная и очень полезная платформа, которая будет всегда актуальна!
+        </span>
+      </div>
+      <div class="info__block">
+        <div class="info__block--first">
+          <span class="info__block--first-title">Если вам срочно понадобилось<br> помощь, к примеру:</span>
+          <ul class="info__block--first-list">
+            <li class="info__block--first-list-item">уборку дома</li>
+            <li class="info__block--first-list-item">приклеить обои </li>
+            <li class="info__block--first-list-item">помочь с переездом </li>
+            <li class="info__block--first-list-item">услуги няни</li>
+            <li class="info__block--first-list-item">починить ваше авто с выездом на дом</li>
+            <li class="info__block--first-list-item">наколить дрова</li>
+            <li class="info__block--first-list-item">составить презентацию</li>
+            <li class="info__block--first-list-item">графический дизайн</li>
+            <li class="info__block--first-list-item">аренда автомобиля </li>
+            <li class="info__block--first-list-item">и многое другое...</li>
+          </ul>
+          <img class="info__block--first-img" src="img/info_image_1.png" alt="">
         </div>
-        <div class="info__content-answeas">
-          <div class="info__content-answeas-first">
-            <img class="info-icon " src="img/Answea.png" alt="answeas">
-            <a href="#" class="info__content-answeas-first-text ">Легко и быстро найдёте <br>
-              исполнителя на любое <br> задание</a>
-          </div>
-          <div class="info__content-answeas-second">
-            <img class="info-icon " src="img/Answea.png" alt="answeas">
-            <a href="#" class="info__content-answeas-second-text ">Зарабатывайте, выполняя <br>
-              разнообразные несложные <br> задания </a>
-          </div>
+        <div class="info__block--second">
+          <span class="info__block--second-title">Здесь вы найдете тех, кто готов<br>  вам помочь с вашим вопросом!</span>
+          <span>Вы просто: </span>
+          <ul class="info__block--second-list">
+            <li class="info__block--second-list-item">выбираете, кто вам<br> нужен</li>
+            <li class="info__block--second-list-item">обговариваете детали<br> лично</li>
+            <li class="info__block--second-list-item">оплачиваете его<br> заработок</li>
+          </ul>
+           <img class="info__block--second-img" src="img/info_image_2.png" alt="">
+        </div>
+        <div class="info__block--third">
+          <span class="info__block--third-title">Регистрируйтесь и ищите своих специалистов<br> или найдите свой заработок! </span>
+          <button class="info__block--third-button">Регистрация</button>
+           <img class="info__block--third-img" src="img/info_image_3.png" alt="">
         </div>
       </div>
+
     </section>
 
-  </div>
-  <!-- INFO END-->
+      <!-- INFO END-->
 
-  <!-- FOOTER START-->
-
+      <!-- MISSION START-->
 
 
-  <div class="footer">
-    <div class="container">
-      <div class="footer__container">
-        <span class="footer__container-title ">Оставьте почту</span>
-        <span class="footer__container-text ">Мы уведомим о запуске!</span>
-
-        <form action="" autocomplete="off" class="footer__container-form" id="form">
-          <div class="footer__container-form-box">
-            <input autocomplete="off" class="footer__container-form-box-input " name="email" id="email" type="text"
-              placeholder="Адрес почты">
+      <section id="mission" class="mission">
+        <span class="mission__title">ПОЧЕМУ ИМЕННО МЫ?</span>
+        <div class="mission__block">
+          <div class="mission__block-first">
+            <span><a href="#">Ish.kg </a> -  это простой способ решения<br> своих повседневных задач через<br> специалистов для которых может<br> стать дополнительным заработком </span>
+            <span>Мы создаём площадку,<br> ориентированную на Real Life<br> задания! </span>
           </div>
-          <button class="footer__container-form-button ">Подписаться</button>
-        </form>
+          <div class="mission__block-second">
+            <span><a href="#">Наша миссия</a> - стать вашим мостиком и стать<br> надежным партнером и спутником в решении<br> ваших вопросов и задач! </span>
+            <span>Здесь ты найдешь все, что искал!<br> Заработать просто! </span>
+          </div>
+        </div>
 
-        <span class="footer__container-rules ">By continuing, you agree that we create an
-          account for you (unless already
-          created), and accept <br> our Terms and Conditions and Privacy Policy.</span>
-        <span class="footer__container-copy">© 2022 ISH.KG</span>
-      </div>
-    </div>
+      </section>
+
+
+        <!-- MISSION END-->
+
+        <!-- FOOTER START-->
+
+        <section class="footer">
+          <div class="footer__logo">
+            <img src="img/icon/Logo.png" alt="">
+          </div>
+          <div class="footer__block">
+            <div class="footer__block--menu">
+              <span>О нас:</span>
+              <div class="footer__block--menu-list">
+                <a href="#" class="footer__block--menu-list-item">Наша миссия</a>
+                <a href="#" class="footer__block--menu-list-item">Контакты</a>
+                <a href="#" class="footer__block--menu-list-item">Обратная связь</a>
+                <a href="#" class="footer__block--menu-list-item">Политика конфиденциальности</a>
+                <a href="#" class="footer__block--menu-list-item">Условия использования</a>
+                <a href="#" class="footer__block--menu-list-item">Реклама на сайте</a>
+                <a href="#" class="footer__block--menu-list-item">Вакансии</a>
+              </div>
+            </div>
+            <div class="footer__block--social">
+              <span>Мы в социальных сетях: </span>
+              <div class="footer__block--social-icon">
+                <a href="#"><img src="img/icon/Instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/icon/Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/icon/Telegram_App.png" alt="Telegram_App"></a>
+                <a href="#"><img src="img/icon/TikTok.png" alt="TikTok"></a>
+                <a href="#"><img src="img/icon/YouTube.png" alt="YouTube"></a>
+              </div>
+            </div>
+            <div class="footer__block--link">
+              <a class="footer__block--link-item" href="#">Заказчикам</a>
+              <a class="footer__block--link-item" href="#">Исполнителям</a>
+              <a class="footer__block--link-item" href="#">Оплата</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER END-->
+
   </div>
-
-
-  <!-- FOOTER END-->
-
-
 </body>
 
 <!-- Подключение скриптов -->
