@@ -4,7 +4,7 @@
 
 body,
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "TT Travels", sans-serif;
   margin: 0;
 }
 
@@ -13,9 +13,13 @@ a {
   color: #fff;
 }
 ul {
-  list-style: none;
+
   padding: 0;
   margin: 0;
+}
+button {
+  border: none;
+  background: none;
 }
 
 @function rem($px) {
@@ -28,7 +32,7 @@ ul {
   @return $result;
 }
 
-$maxWidthContainer: 1440px;
+$maxWidthContainer: 1366px;
 
 @mixin adaptive-value($property, $startSize, $minSize) {
   $addSize: $startSize - $minSize;
@@ -43,7 +47,9 @@ $mobileSmall: rem(479.98); // телефоны s
 
   .container {
     max-width: $maxWidthContainer;
-    margin: 0 auto;;
+    margin: 0 auto;
+    @include adaptive-value("padding-left", 120, 20);
+    @include adaptive-value("padding-right", 120, 20);
   }
 
 
@@ -51,53 +57,80 @@ $mobileSmall: rem(479.98); // телефоны s
 
   .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include adaptive-value("padding-left", 120, 10);
-    @include adaptive-value("padding-right", 120, 10);
-    height: rem(151);
+    height: rem(100);
+    border-bottom: 4px solid #FD591F;
       @media (max-width: $tablet) {
         height: rem(90);
       }
       @media (max-width: $mobile) {
+        flex-direction: column;
+        gap: rem(10);
+        border-bottom: 2px solid #FD591F;
       }
-		&__logo {
-        width: rem(120);
-        height: rem(50);
-        @media (max-width: $mobile) {
-          width: rem(90);
-          height: rem(40);
-        }
-        @media (max-width: $mobileSmall) {
-          width: rem(60);
-          height: rem(25);
-        }
-		}
+      &__block {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+          @media (max-width: $mobile) {
+            padding-top: rem(20);
+          }
+            &-logo {
+                width: rem(80);
+                height: rem(35);
+                @media (max-width: $mobile) {
+                }
+                @media (max-width: $mobileSmall) {
+                }
+            }
 
-		&__nav {
-      display: flex;
-      gap: rem(22);
-      align-items: center;
-        @media (max-width: $mobile) {
-          gap: rem(9);
-        }
-		}
+            &-menu {
+              display: flex;
+              width: 45%;
+              justify-content: space-between;
+                  @media (max-width: $mobile) {
+                    display: none;
+                  }
+              &-item {
+                font-family: 'TT Travels';
+                font-style: normal;
+                font-weight: 500;
+                font-size: rem(16);
+                line-height: rem(19);
+                color: #000000;
+              }
+            }
 
-		&__nav-news-link {
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 400;
-      font-size: rem(18);
-      line-height: rem(22);
-      color: #000000;
-        @media (max-width: $mobileSmall) {
-          font-size: rem(12);
-          line-height: rem(15);
-        }
-		}
+            &-nav {
+              display: flex;
+              gap: rem(22);
+              align-items: center;
+                @media (max-width: $mobile) {
+                  gap: rem(9);
+                }
+            }
 
-		&__nav-telegram-link {
-		}
+            &-nav-telegram-link {
+            }
+      }
+      &__mobile {
+        display: none;
+            @media (max-width: $mobile) {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+            }
+          &-item {
+            font-family: 'TT Travels';
+            font-style: normal;
+            font-weight: 500;
+            font-size: rem(16);
+            line-height: rem(19);
+            color: #000000;
+          }
+      }
+
+
 }
 .telegram-link {
     display: flex;
@@ -105,11 +138,14 @@ $mobileSmall: rem(479.98); // телефоны s
     padding: rem(8) rem(16);
     gap: rem(8);
     background: #26A4E3;
-    border-radius: rem(2);
+    border-radius: rem(8);
+      @media (max-width: $mobile) {
+        padding: rem(3) rem(16);
+      }
       &__logo {
-        @media (max-width: $mobileSmall) {
-          width: rem(15);
-          height: rem(15);
+        @media (max-width: $mobile) {
+          width: rem(18);
+          height: rem(18);
         }
       }
 
@@ -120,9 +156,8 @@ $mobileSmall: rem(479.98); // телефоны s
         font-size: rem(18);
         line-height: rem(22);
         color: #FFFFFF;
-          @media (max-width: $mobileSmall) {
-            font-size: rem(12);
-            line-height: rem(15);
+          @media (max-width: $mobile) {
+            font-size: rem(16);
           }
       }
 }
@@ -130,393 +165,413 @@ $mobileSmall: rem(479.98); // телефоны s
  //-------header--------
 
 
- //-------content--------
-.content {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: rem(406) auto;
-  gap: rem(30);
-    @include adaptive-value("padding-left", 120, 10);
-    @include adaptive-value("padding-right", 120, 10);
-    @include adaptive-value("padding-top", 50, 5);
-    @include adaptive-value("gap", 30, 10);
-    @media (min-width: rem(2000)) {
-      grid-template-rows: rem(390) auto;
-    }
-      @media (max-width: $tablet) {
-        grid-template-columns: auto;
-        justify-content: center;
-        text-align: center;
-        grid-template-rows: rem(280) auto;
-      }
+ //-------main--------
+
+
+.main {
+    padding-top: rem(70);
+    @include adaptive-value("padding-bottom", 75, 40);
+    border-bottom: 4px solid #FD591F;
       @media (max-width: $mobile) {
-        grid-template-rows: rem(250) auto;
+         border-bottom: 2px solid #FD591F;
+         text-align: center;
+         padding-top: rem(40);
       }
-      @media (max-width: $mobileSmall) {
-        grid-template-rows: rem(180) auto;
-      }
-
       &__title {
-        display: flex;
-        flex-direction: column;
-        padding-top: rem(10);
 
-          @media (max-width: $mobile) {
-
-          }
-            &-first {
-
-            }
-            &-second {
-
-
-            }
-            &-third {
-
-
-            }
-            &-fourth {
-
-
-            }
-        }
-
-
-      &__time {
-        position: relative;
-        height: rem(166);
-        background: #FF7E2D;
-        border-radius: 8px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: rem(8);
-
-            &-line {
-            @media (max-width: $tablet) {
-              position: absolute;
-              border: 1.5px solid #492DFF;
-              top: rem(-40);
-              left: 0;
-              width: 100%;
-              @media (max-width: $mobileSmall) {
-              top: rem(-20);
-              }
-            }
-          }
-
+        font-family: 'TT Travels';
+        font-style: normal;
+        font-weight: 500;
+        font-size: rem(48);
+        line-height: rem(58);
+        color: #FD591F;
           @media (max-width: $tablet) {
-            @include adaptive-value("height", 150, 84);
+            font-size: rem(37);
+            line-height: rem(47);
           }
           @media (max-width: $mobile) {
-
+            font-size: rem(48);
+            line-height: rem(52);
           }
           @media (max-width: $mobileSmall) {
-            margin-top: rem(75);
+            font-size: rem(29);
+            line-height: rem(36);
           }
+      }
 
-            &-title {
-              font-family: 'Inter';
-              font-style: normal;
-              font-weight: 400;
-              line-height: rem(22);
-              color: #FFFFFF;
-              padding-left: rem(42);
-              padding-right: rem(42);
+      &__block {
+          display: grid;
+          grid-template-columns: auto auto;
+          grid-template-rows: rem(210) rem(190);
+                @media (max-width: $pc) {
+                  grid-template-rows: rem(210) rem(165);
+                }
                 @media (max-width: $tablet) {
-                  text-align: start;
+                  grid-template-rows: rem(160) rem(110);
                 }
                 @media (max-width: $mobile) {
-                  @include adaptive-value("font-size", 24, 10);
+                   grid-template-columns: auto;
+                   grid-template-rows: auto;
                 }
-                @media (max-width: rem(460)) {
-                  padding: 0 rem(25);
+
+            &-text {
+              font-style: normal;
+              font-weight: 500;
+              font-size: rem(20);
+              line-height: rem(24);
+              letter-spacing: -0.02em;
+              color: #000000;
+              padding-top: rem(50);
+                @media (max-width: $tablet) {
+                  width: 100%;
+                  font-size: rem(16);
+                  line-height: rem(20);
+                }
+                @media (max-width: $mobile) {
+                  br {
+                    display: none;
+                  }
                 }
             }
 
-            &-сountdown {
-              display: flex;
-              font-weight: 700;
-              font-size: rem(28);
-              line-height: rem(34);
-              color: #FFFFFF;
-              padding-left: rem(42);
-              padding-right: rem(42);
-                @media (max-width: $tablet) {
+            &-img {
+             height: rem(380);
 
+                @media (max-width: $tablet) {
+                  position: relative;
+                  height: rem(280);
+                  border-bottom: 1px solid rgb(214, 196, 196);
+                    &::after{
+                        content:"";
+                        position: absolute;
+                        border: 1px solid rgb(129, 122, 122);
+                        top:0;
+                        left:50%;
+                        width:60%;
+                        margin-left:-30%;
+
+                    }
                 }
                 @media (max-width: $mobile) {
-                  font-size: rem(20);
-                  line-height: rem(30);
-                  justify-content: start;
+                  height: rem(350);
+                  margin: rem(50) 0;
                 }
                 @media (max-width: $mobileSmall) {
-                  justify-content: start;
-                  font-size: rem(18);
-                  line-height: rem(24);
+                  height: rem(240);
+                  margin: rem(50) 0;
                 }
-                @media (max-width: rem(460)) {
-                  font-size: rem(14);
-                  line-height: rem(18);
-                  font-weight: 500;
-                  justify-content: start;
-                  padding: 0 rem(25);
-                }
+              &-picture {
+                width: 97%;
+                 @media (max-width: $tablet) {
+                   height: 80%;
+                 }
+                  @media (max-width: $mobile) {
+                   height: 85%;
+                  }
+              }
+            }
+
+            &-form {
+
             }
       }
 
 
-        &__img {
-          display: grid;
-          justify-self: end;
-          grid-template-columns: rem(238) rem(242);
-          grid-template-rows: rem(213) rem(293) rem(176);
-          gap: rem(7);
-              @media (max-width: $tablet) {
-                justify-self:center;
-              }
-              @media (max-width: $mobileSmall) {
-                grid-template-columns: rem(160) rem(164);
-                grid-template-rows: rem(161) rem(146) rem(133);
-              }
-              @media (max-width: rem(370)) {
-                grid-template-columns: rem(145) rem(149);
-                grid-template-rows: rem(161) rem(146) rem(133);
-              }
-
-            &-first {
-
-                  @media (max-width:  $mobileSmall) {
-                      width: rem(160);
-                      height: rem(161);
-                  }
-                  @media (max-width:  rem(370)) {
-                      width: rem(145);
-                      height: rem(161);
-                  }
-
-            }
-
-            &-second {
-
-              @media (max-width:  $mobileSmall) {
-                  width: rem(164);
-                  height: rem(314);
-              }
-              @media (max-width:  rem(370)) {
-                  width: rem(149);
-                  height: rem(314);
-              }
-            }
-
-            &-third {
-
-              @media (max-width:  $mobileSmall) {
-                  width: rem(160);
-                  height: rem(146);
-              }
-              @media (max-width:  rem(370)) {
-                  width: rem(145);
-                  height: rem(146);
-              }
-            }
-
-            &-fourth {
-              grid-column-start: 1;
-              transform: translateY(rem(-99));
-
-                @media (max-width: $mobileSmall) {
-                  width: rem(331);
-                  height: rem(133);
-                  transform: translateY(rem(0));
-              }
-
-                @media (max-width: rem(370)) {
-                  width: rem(300);
-                  height: rem(133);
-              }
+    .main-form {
+     display: flex;
+     flex-direction: column;
+     gap: rem(35);
+        @media (max-width: $tablet) {
+          width: 100%;
+        }
+         @media (max-width: $mobile) {
+            align-items: center;
+        }
+        &__title {
+          font-family: 'TT Travels';
+          font-style: normal;
+          font-weight: 500;
+          font-size: rem(32);
+          line-height: rem(38);
+          color: #000000;
+            @media (max-width: $tablet) {
+              font-size: rem(20);
+              line-height: rem(24);
             }
         }
 
+        &__block {
+            position: relative;
+            width: 100%;
+            height: rem(35);
+              @media (max-width: $mobile) {
+                  width: 65%;
+              }
+                &-input {
+                  width: 93%;
+                  height: 100%;
+                  border-radius: rem(8) rem(24) rem(24) rem(8);
+                  border-color: #4453D9;
+                  padding-left: rem(18);
+                  font-family: 'TT Travels';
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: rem(16);
+                  line-height: rem(19);
+                  color: rgba(0, 0, 0, 0.65);
+                  outline: none;
+                    @media (max-width: $pc) {
+                        width: 90%;;
+                    }
+                    @media (max-width: $tablet) {
+                        width: 87%;
+                    }
+                    @media (max-width: $mobile) {
+                       width: 88%;
+                    }
+                    @media (max-width: $mobileSmall) {
+                       width: 83%;
+                    }
+                }
+
+                &-button {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                }
+        }
+    }
 }
 
 
-.content-text {
-    font-weight: 700;
-    color: #000000;
-    font-size: rem(60);
-    line-height: rem(70);
-
-      @media (max-width: $tablet) {
-        @include adaptive-value("font-size", 69, 40);
-        @include adaptive-value("line-height", 84, 50);
-      }
-      @media (max-width: $mobileSmall) {
-        @include adaptive-value("font-size", 69, 25);
-        @include adaptive-value("line-height", 84, 40);
-      }
-}
-
-//-------content--------
+//-------main--------
 
 
 //-------info--------
+
 
 .info {
   display: flex;
   flex-direction: column;
-    @include adaptive-value("padding-left", 120, 10);
-    @include adaptive-value("padding-right", 120, 10);
-    padding-top: rem(125);
-    padding-bottom: rem(50);
-      @media (max-width: $tablet) {
-        align-items: center;
-        padding-top: rem(40);
-      }
+  gap: rem(40);
+  margin-top: rem(70);
+  align-items: center;
+  padding-bottom: rem(60);
+  border-bottom: 4px solid #FD591F;
       @media (max-width: $mobile) {
-        padding-bottom: rem(20);
+          border-bottom: 2px solid #FD591F;
       }
-      @media (max-width: $mobileSmall) {
-
-      }
-  &__line {
-    border: 1.5px solid #492DFF;
-      @media (max-width: $tablet) {
-       display: none;
-      }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: rem(60);
-    font-size: rem(30);
-    padding: rem(85) rem(30) 0 rem(30);
-    font-weight: 400;
-    line-height: rem(37);
-    @include adaptive-value("gap", 60, 40);
-
-     @media (max-width: $tablet) {
-       padding: 0;
-       width: 100%;
-        br {
-          display: none;
+		&__title {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      font-size: rem(28);
+      line-height: rem(34);
+      letter-spacing: -0.02em;
+      color: #4453D9;
+        @media (max-width: $mobileSmall) {
+            font-size: rem(24);
         }
-      }
-     @media (max-width: $mobile) {
-        @include adaptive-value("font-size", 40, 20);
-      }
-     @media (max-width: $mobileSmall) {
+		}
 
-      }
-     @media (max-width: rem(370)) {
+		&__text {
+      height: rem(155);
+      width: 80%;
+      background-image: url("../img/fon_info_text.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'TT Travels';
+      font-style: normal;
+      font-weight: 500;
+      font-size: rem(18);
+      line-height: 144.9%;
+      color: #000000;
+        @media (max-width: $tablet) {
+          background-image: url("../img/fon_info_text_tablet.png");
+        }
+        @media (max-width: $mobile) {
+          background-image: url("../img/fon_info_text_mobile.png");
+          height: rem(330);
+        }
+		}
 
-           line-height: rem(27);
-      }
-
-
-    &-questions {
+		&__block {
       display: flex;
-      justify-content: space-between;
-      gap: rem(5);
-      @media (max-width: $tablet) {
+      flex-wrap: wrap;
+      row-gap: rem(40);
+     @include adaptive-value("column-gap", 100, 10);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+      justify-content: center;
+        &--first {
+            box-sizing: border-box;
+            background: #FFFFFF;
+            border: 1px solid #4453D9;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            width: 45%;
+            height: rem(433);
+            position: relative;
+            @include adaptive-value("padding", 40, 20);
+              @media (max-width: $mobile) {
+                  width: 100%;
+                }
+            &-title {
+                font-family: 'TT Travels';
+                font-style: normal;
+                font-weight: 600;
+                font-size: rem(20);
+                line-height: rem(24);
+                text-transform: uppercase;
+                color: #182851;
+                    @media (max-width: $tablet) {
+                      font-size: rem(15);
+                      line-height: rem(20);
+                      font-weight: 600;
+                    }
+                    @media (max-width: $mobileSmall) {
+                      font-size: rem(12);
+                      line-height: rem(18);
+                    }
+
+            }
+
+            &-list {
+              font-family: 'TT Travels';
+              font-style: normal;
+              font-weight: 500;
+              font-size: rem(18);
+              line-height: 142.4%;
+              color: #000000;
+              padding: rem(30) 0 0 rem(20);
+                    @media (max-width: $tablet) {
+                    font-size: rem(15);
+                  }
+                  @media (max-width: $mobileSmall) {
+                    padding: rem(10) 0 0 rem(20);
+                  }
+                &-item {
+                }
+            }
+            &-img {
+              position: absolute;
+              bottom: rem(40);
+              right: rem(40);
+            }
+        }
+
+        &--second {
+          box-sizing: border-box;
+          background: #FFFFFF;
+          border: 1px solid #4453D9;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 8px;
+          width: 45%;
+          height: rem(433);
+          @include adaptive-value("padding", 30, 20);
+          position: relative;
+          display: flex;
+          flex-direction: column;
+                @media (max-width: $mobile) {
+                  width: 100%;
+                }
+            &-title {
+                font-family: 'TT Travels';
+                font-style: normal;
+                font-weight: 600;
+                font-size: rem(20);
+                line-height: rem(24);
+                text-transform: uppercase;
+                color: #182851;
+                padding-bottom: rem(30);
+                  @media (max-width: 1100px) {
+                    font-size: rem(19);
+                  }
+                     @media (max-width: $tablet) {
+                      font-size: rem(15);
+                      line-height: rem(20);
+                      font-weight: 600;
+                    }
+            }
+
+            &-list {
+              font-family: 'TT Travels';
+              font-style: normal;
+              font-weight: 500;
+              font-size: rem(18);
+              line-height: 142.4%;
+              color: #000000;
+              padding: rem(10) 0 0 rem(20);
+              list-style-type: decimal;
+                  @media (max-width: 1100px) {
+                      br {
+                        display: none;
+                      }
+                  }
+                  @media (max-width: $tablet) {
+                    font-size: rem(15);
+                  }
+                &-item {
+                }
+            }
+            &-img {
+              position: absolute;
+              bottom: rem(40);
+              right: rem(40);
+            }
+        }
+
+      &--third {
+        box-sizing: border-box;
+        background: #FFFFFF;
+        border: 1px solid #4453D9;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        width: 45%;
+        height: rem(433);
+        @include adaptive-value("padding", 40, 20);
+        position: relative;
+        display: flex;
         flex-direction: column;
-
-       }
-      &-first {
-        display: flex;
-        gap: rem(30);
         align-items: center;
-
-      @media (max-width: $mobile) {
-        gap: rem(20);
-
-       }
-        &-text {
-          color: #4453D9;
-        }
+            @media (max-width: $mobile) {
+              width: 100%;
+            }
+          &-title {
+              font-family: 'TT Travels';
+              font-style: normal;
+              font-weight: 500;
+              font-size: rem(18);
+              line-height: 142.4%;
+              color: #000000;
+              padding-bottom: rem(25);
+                @media (max-width: $tablet) {
+                  br {
+                    display: none;
+                  }
+              }
+          }
+          &-button {
+              background: #C8CC00;
+              border-radius: 8px;
+              width: rem(224);
+              height: rem(51);
+              font-family: 'TT Travels';
+              font-style: normal;
+              font-weight: 500;
+              font-size: rem(16);
+              line-height: rem(19);
+              text-align: center;
+              color: #000000;
+          }
+          &-img {
+              position: absolute;
+              bottom: rem(40);
+          }
       }
-
-      &-second {
-        display: flex;
-        gap: rem(30);
-        align-items: center;
-
-      @media (max-width: $tablet) {
-        transform: translate(0, rem(190));
-       }
-      @media (max-width: $mobile) {
-        transform: translate(0, rem(150));
-        gap: rem(20);
-      }
-      @media (max-width: $mobileSmall) {
-        // transform: translate(0, rem(130));
-      }
-      @media (max-width: rem(377)) {
-        transform: translate(0, rem(175));
-      }
-        &-text {
-          color: #4453D9;
-        }
-      }
-    }
-    &-answeas {
-      display: flex;
-      justify-content: space-between;
-      gap: rem(65);
-      @media (max-width: $tablet) {
-        flex-direction: column;
-       }
-      &-first {
-        display: flex;
-        gap: rem(30);
-        align-items: center;
-
-      @media (max-width: $tablet) {
-        transform: translate(0, rem(-50));
-       }
-      @media (max-width: $mobile) {
-         gap: rem(20);
-       }
-        &-text {
-          color: #000000;
-        }
-      }
-
-      &-second {
-        display: flex;
-        gap: rem(30);
-        align-items: center;
-
-          @media (max-width: $tablet) {
-            transform: translate(0, rem(80));
-        }
-      @media (max-width: $mobile) {
-        transform: translate(0, rem(30));
-        gap: rem(20);
-      }
-      @media (max-width: $mobileSmall) {
-        transform: translate(0, rem(40));
-      }
-      @media (max-width: rem(370)) {
-        transform: translate(0, rem(30));
-      }
-        &-text {
-          color: #000000;
-        }
-      }
-    }
-  }
-
-}
-.info-icon {
-  width: rem(43);
-  height: rem(45);
-
-      @media (max-width: $mobile) {
-        width: rem(24);
-        height: rem(24);
-      }
+		}
 }
 
 
@@ -524,192 +579,164 @@ $mobileSmall: rem(479.98); // телефоны s
 //-------info--------
 
 
-//-------footer--------
-.foot {
-      @media (max-width: $tablet) {
+//-------mission--------
+
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: rem(60);
+  border-bottom: 4px solid #FD591F;
+    @media (max-width: $mobile) {
+        border-bottom: 2px solid #FD591F;
     }
-}
-.footer {
-  background-image: url('../img/Footer-fon.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: rem(570);
-    @media (max-width: $tablet) {
-      transform: translate(0, rem(160));
-       height: rem(700);
-    }
-   @media (max-width: $mobile) {
-      transform: translate(0, rem(100));
-    }
-   @media (max-width: $mobileSmall) {
-    }
-      @media (max-width: rem(370)) {
-        transform: translate(0, rem(50));
-      }
 
-		&__container{
-       display: flex;
-       flex-direction: column;
-      @include adaptive-value("padding-left", 120, 10);
-      @include adaptive-value("padding-right", 120, 10);
-      padding-top: rem(85);
-        @media (max-width: $mobile) {
-          padding-top: rem(30);
-        }
-        @media (max-width: rem(370)) {
-
-        }
-
-       &-title {
-          font-weight: 500;
-          font-size: rem(55);
-          line-height: rem(66);
-          color: #F9F9F9;
-          padding-bottom: rem(15);
-
-             @media (max-width: $mobile) {
-                font-weight: 500;
-                font-size: rem(35);
-                line-height: rem(29);
-              }
-              @media (max-width: $mobileSmall) {
-                font-weight: 500;
-                font-size: rem(24);
-                line-height: rem(30);
-                padding-bottom: rem(10);
-              }
-              @media (max-width: rem(370)) {
-
-              }
-       }
-
-      &-text {
-        font-weight: 400;
-        font-size: rem(33);
-        line-height: rem(39);
-        color: #F9F9F9;
-        padding-bottom: rem(35);
-
-              @media (max-width: $mobile) {
-                font-weight: 400;
-                font-size: rem(20);
-                line-height: rem(24);
-              }
-              @media (max-width: $mobileSmall) {
-                font-weight: 400;
-                font-size: rem(20);
-                line-height: rem(24);
-                height: rem(54);
-                padding-bottom: rem(10);
-              }
-              @media (max-width: rem(370)) {
-
-              }
-      }
-
-      &-form {
-        display: flex;
-        justify-content: space-between;
-        gap: rem(18);
-        padding-bottom: rem(35);
-            @media (max-width: $tablet) {
-              flex-direction: column;
-            }
-        &-box {
-          width: 60%;
-          margin-bottom: rem(20);
-          // display: flex;
-          // flex-direction: column-reverse;
-          @media (max-width: $tablet) {
-            width: 100%;
-          }
-          &-input {
-            width: 95%;
-            margin-bottom: rem(8);
-            height: rem(88);
-            background: #FFFFFF;
-            border: 2px solid #FF7E2D;
-            border-radius: rem(8);
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: rem(32);
-            line-height: rem(39);
-            color: #9E9E9E;
-            padding-left: rem(18);
-
-              @media (max-width: $tablet) {
-                width: 90%;
-                height: rem(58);
-              }
-                @media (max-width: $mobileSmall) {
-                  font-weight: 400;
-                  font-size: rem(20);
-                  line-height: rem(24);
-                  height: rem(54);
-                }
-          }
-        }
-
-
-        &-button {
-          width: 40%;
-          height: rem(95);
-          background: #FF7E2D;
-          border-radius: rem(8);
-          font-family: 'Inter';
-          font-style: normal;
-          font-weight: 400;
-          font-size: rem(33);
-          line-height: rem(39);
-          color: #FFFFFF;
-          border: none;
-
-            @media (max-width: $tablet) {
-              width: 60%;
-              height: rem(58);
-            }
-              @media (max-width: $mobileSmall) {
-                font-weight: 400;
-                font-size: rem(20);
-                line-height: rem(24);
-                height: rem(54);
-                width: 80%;
-              }
-        }
-      }
-      &-rules {
-        font-family: 'Inter';
+		&__title {
+        font-family: 'TT Travels';
         font-style: normal;
-        font-weight: 400;
-        font-size: rem(22);
-        line-height: 166%;
-        letter-spacing: 0.718563px;
-        color: rgba(255, 255, 255, 0.5);
-        padding-bottom: rem(35);
-
-      }
-
-      &-copy {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: rem(12);
-        line-height: rem(15);
-        color: rgba(255, 255, 255, 0.5);
-
-      }
+        font-weight: 500;
+        font-size: rem(28);
+        line-height: rem(34);
+        color: #4453D9;
+        padding: rem(80) 0 rem(45) 0;
+          @media (max-width: $mobileSmall) {
+              font-size: rem(24);
+          }
 		}
 
+		&__block {
+      display: flex;
+      @include adaptive-value("gap", 150, 20);
+      font-family: 'TT Travels';
+      font-style: normal;
+      font-weight: 500;
+      font-size: rem(20);
+      line-height: 151.9%;
+          @media (max-width: $tablet) {
+              br {
+                display: none;
+              }
+          }
+          @media (max-width: $mobile) {
+              flex-direction: column;
+          }
+          span {
+
+              color: #000000;
+          }
+          a {
+              color: #CE4040;
+          }
+        &-first {
+          display: flex;
+          flex-direction: column;
+          gap: rem(30);
+        }
+
+        &-second {
+          display: flex;
+          flex-direction: column;
+          gap: rem(40);
+        }
+		}
 }
+
+
+
+//-------mission--------
+
+
+//-------footer--------
+
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  padding: rem(35) 0 rem(55) 0;
+
+   &__logo {
+      width: rem(80);
+      height: rem(35);
+   }
+
+		&__block {
+      display: flex;
+      justify-content: space-between;
+         @media (max-width: $tablet) {
+           flex-direction: column;
+           gap: rem(5);
+         }
+        &--menu {
+         gap: rem(5);
+         display: flex;
+         flex-direction: column;
+         order: 1;
+         span {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: rem(21);
+            color: #000000;
+         }
+              &-list {
+                display: flex;
+                flex-direction: column;
+                gap: rem(5);
+                  &-item {
+                      font-family: 'Montserrat';
+                      font-style: normal;
+                      font-weight: 400;
+                      font-size: rem(16);
+                      line-height: rem(21);
+                      color: #000000;
+                  }
+              }
+
+        }
+        &--social {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: rem(20);
+          order: 2;
+            @media (max-width: $tablet) {
+             order: 3;
+            }
+            &-icon {
+              display: flex;
+            }
+        }
+        &--link {
+         display: flex;
+         flex-direction: column;
+         gap: rem(5);
+         order: 3;
+            @media (max-width: $tablet) {
+             order: 2;
+            }
+          &-item {
+            font-family: 'TT Travels';
+            font-style: normal;
+            font-weight: 500;
+            font-size: rem(16);
+            line-height: rem(19);
+            color: #000000 !important;
+          }
+        }
+		}
+}
+
+//-------footer--------
+
 
 .just-validate-error-label {
   font-weight: 500;
-  font-size: rem(20);
+  font-size: rem(15);
   line-height: rem(20);
+  padding-top: rem(5);
 }
-
-
-//-------footer--------
 
