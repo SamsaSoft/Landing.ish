@@ -1,4 +1,3 @@
-@use "sass:math";
 body,
 html {
   font-family: "TT Travels", sans-serif;
@@ -28,113 +27,82 @@ button {
 }
 
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  position: fixed;
+  width: 86.5%;
+  z-index: 5;
+  background: white;
   display: flex;
   height: 6.25rem;
   border-bottom: 4px solid #FD591F;
 }
-
 @media (max-width: 61.99875rem) {
   .header {
     height: 5.625rem;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 0.625rem;
     border-bottom: 2px solid #FD591F;
+    width: 86.8%;
   }
 }
-
 .header__block {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 @media (max-width: 47.99875rem) {
   .header__block {
     padding-top: 1.25rem;
   }
 }
-
 .header__block-logo {
   width: 5rem;
   height: 2.1875rem;
 }
-
 .header__block-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 45%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 @media (max-width: 47.99875rem) {
   .header__block-menu {
     display: none;
   }
 }
-
 .header__block-menu-item {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.1875rem;
   color: #000000;
 }
-
 .header__block-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1.375rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 @media (max-width: 47.99875rem) {
   .header__block-nav {
     gap: 0.5625rem;
   }
 }
-
 .header__mobile {
   display: none;
 }
-
 @media (max-width: 47.99875rem) {
   .header__mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     width: 100%;
   }
 }
-
 .header__mobile-item {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -143,40 +111,37 @@ button {
 }
 
 .telegram-link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0.5rem 1rem;
   gap: 0.5rem;
   background: #26A4E3;
   border-radius: 0.5rem;
 }
-
 @media (max-width: 47.99875rem) {
   .telegram-link {
-    padding: 0.1875rem 1rem;
+    padding: 0.1875rem 0.75rem;
   }
 }
-
+@media (max-width: 29.99875rem) {
+  .telegram-link {
+    padding: 0.125rem 0.5rem;
+  }
+}
 @media (max-width: 47.99875rem) {
   .telegram-link__logo {
     width: 1.125rem;
     height: 1.125rem;
   }
 }
-
 .telegram-link__title {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 1.125rem;
   line-height: 1.375rem;
   color: #FFFFFF;
 }
-
 @media (max-width: 47.99875rem) {
   .telegram-link__title {
     font-size: 1rem;
@@ -184,81 +149,64 @@ button {
 }
 
 .main {
-  padding-top: 4.375rem;
+  padding-top: 9.375rem;
   padding-bottom: calc(40px + 35 * ((100vw - 320px) / 1440));
   border-bottom: 4px solid #FD591F;
 }
-
 @media (max-width: 47.99875rem) {
   .main {
     border-bottom: 2px solid #FD591F;
     text-align: center;
-    padding-top: 2.5rem;
+    padding-top: 7.5rem;
   }
 }
-
 .main__title {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 3rem;
   line-height: 3.625rem;
   color: #FD591F;
 }
-
 @media (max-width: 61.99875rem) {
   .main__title {
     font-size: 2.3125rem;
     line-height: 2.9375rem;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .main__title {
     font-size: 3rem;
     line-height: 3.25rem;
   }
 }
-
 @media (max-width: 29.99875rem) {
   .main__title {
     font-size: 1.8125rem;
     line-height: 2.25rem;
   }
 }
-
 .main__block {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  -ms-grid-rows: 13.125rem 11.875rem;
-      grid-template-rows: 13.125rem 11.875rem;
+  grid-template-columns: auto auto;
+  grid-template-rows: 13.125rem 11.875rem;
 }
-
 @media (max-width: 92.5rem) {
   .main__block {
-    -ms-grid-rows: 13.125rem 10.3125rem;
-        grid-template-rows: 13.125rem 10.3125rem;
+    grid-template-rows: 13.125rem 10.3125rem;
   }
 }
-
 @media (max-width: 61.99875rem) {
   .main__block {
-    -ms-grid-rows: 10rem 6.875rem;
-        grid-template-rows: 10rem 6.875rem;
+    grid-template-rows: 10rem 6.875rem;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .main__block {
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
   }
 }
-
 .main__block-text {
   font-style: normal;
   font-weight: 500;
@@ -268,7 +216,6 @@ button {
   color: #000000;
   padding-top: 3.125rem;
 }
-
 @media (max-width: 61.99875rem) {
   .main__block-text {
     width: 100%;
@@ -276,124 +223,107 @@ button {
     line-height: 1.25rem;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .main__block-text br {
     display: none;
   }
 }
-
 .main__block-img {
   height: 23.75rem;
 }
-
 @media (max-width: 61.99875rem) {
   .main__block-img {
     position: relative;
     height: 17.5rem;
-    border-bottom: 1px solid #d6c4c4;
+    border-bottom: 1px solid rgb(214, 196, 196);
   }
   .main__block-img::after {
     content: "";
     position: absolute;
-    border: 1px solid #817a7a;
+    border: 1px solid rgb(129, 122, 122);
     top: 0;
     left: 50%;
     width: 60%;
     margin-left: -30%;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .main__block-img {
     height: 21.875rem;
     margin: 3.125rem 0;
   }
 }
-
 @media (max-width: 29.99875rem) {
   .main__block-img {
     height: 15rem;
     margin: 3.125rem 0;
   }
 }
-
 .main__block-img-picture {
   width: 97%;
 }
-
 @media (max-width: 61.99875rem) {
   .main__block-img-picture {
     height: 80%;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .main__block-img-picture {
     height: 85%;
   }
 }
-
 .main .main-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 2.1875rem;
 }
-
 @media (max-width: 61.99875rem) {
   .main .main-form {
     width: 100%;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .main .main-form {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
 }
-
 .main .main-form__title {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 2rem;
   line-height: 2.375rem;
   color: #000000;
 }
-
 @media (max-width: 61.99875rem) {
   .main .main-form__title {
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
 }
-
 .main .main-form__block {
   position: relative;
   width: 100%;
   height: 2.1875rem;
 }
-
 @media (max-width: 47.99875rem) {
   .main .main-form__block {
-    width: 65%;
+    width: 75%;
   }
 }
-
+@media (max-width: 29.99875rem) {
+  .main .main-form__block {
+    width: 85%;
+  }
+}
 .main .main-form__block-input {
-  width: 93%;
+  width: 83%;
   height: 100%;
   border-radius: 0.5rem 1.5rem 1.5rem 0.5rem;
   border-color: #4453D9;
   padding-left: 1.125rem;
-  font-family: 'TT Travels';
+  padding-right: 2.8125rem;
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -401,31 +331,46 @@ button {
   color: rgba(0, 0, 0, 0.65);
   outline: none;
 }
-
-@media (max-width: 92.5rem) {
+@media (max-width: 1430px) {
   .main .main-form__block-input {
-    width: 90%;
+    width: 79%;
   }
 }
-
 @media (max-width: 61.99875rem) {
   .main .main-form__block-input {
-    width: 87%;
+    width: 76%;
   }
 }
-
-@media (max-width: 47.99875rem) {
+@media (max-width: 875px) {
   .main .main-form__block-input {
-    width: 88%;
+    width: 72%;
   }
 }
-
-@media (max-width: 29.99875rem) {
+@media (max-width: 47.99875rem) {
   .main .main-form__block-input {
     width: 83%;
   }
 }
-
+@media (max-width: 672px) {
+  .main .main-form__block-input {
+    width: 79%;
+  }
+}
+@media (max-width: 550px) {
+  .main .main-form__block-input {
+    width: 75%;
+  }
+}
+@media (max-width: 410px) {
+  .main .main-form__block-input {
+    width: 72%;
+  }
+}
+@media (max-width: 360px) {
+  .main .main-form__block-input {
+    width: 64%;
+  }
+}
 .main .main-form__block-button {
   position: absolute;
   top: 0;
@@ -433,30 +378,21 @@ button {
 }
 
 .info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 2.5rem;
   margin-top: 4.375rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding-bottom: 3.75rem;
   border-bottom: 4px solid #FD591F;
 }
-
 @media (max-width: 47.99875rem) {
   .info {
     border-bottom: 2px solid #FD591F;
   }
 }
-
 .info__title {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 1.75rem;
@@ -464,13 +400,11 @@ button {
   letter-spacing: -0.02em;
   color: #4453D9;
 }
-
 @media (max-width: 29.99875rem) {
   .info__title {
     font-size: 1.5rem;
   }
 }
-
 .info__text {
   height: 9.6875rem;
   width: 80%;
@@ -478,72 +412,55 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1.125rem;
   line-height: 144.9%;
   color: #000000;
 }
-
 @media (max-width: 61.99875rem) {
   .info__text {
     background-image: url("../img/fon_info_text_tablet.png");
   }
 }
-
 @media (max-width: 47.99875rem) {
   .info__text {
     background-image: url("../img/fon_info_text_mobile.png");
     height: 20.625rem;
   }
 }
-
 .info__block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   row-gap: 2.5rem;
-  -webkit-column-gap: calc(10px + 90 * ((100vw - 320px) / 1440));
-          column-gap: calc(10px + 90 * ((100vw - 320px) / 1440));
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -moz-column-gap: calc(10px + 90 * ((100vw - 320px) / 1440));
+       column-gap: calc(10px + 90 * ((100vw - 320px) / 1440));
+  justify-content: center;
 }
-
 @media (max-width: 47.99875rem) {
   .info__block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
-
 .info__block--first {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #4453D9;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   width: 45%;
   height: 27.0625rem;
   position: relative;
   padding: calc(20px + 20 * ((100vw - 320px) / 1440));
 }
-
 @media (max-width: 47.99875rem) {
   .info__block--first {
     width: 100%;
   }
 }
-
 .info__block--first-title {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 600;
   font-size: 1.25rem;
@@ -551,7 +468,6 @@ button {
   text-transform: uppercase;
   color: #182851;
 }
-
 @media (max-width: 61.99875rem) {
   .info__block--first-title {
     font-size: 0.9375rem;
@@ -559,16 +475,14 @@ button {
     font-weight: 600;
   }
 }
-
 @media (max-width: 29.99875rem) {
   .info__block--first-title {
     font-size: 0.75rem;
     line-height: 1.125rem;
   }
 }
-
 .info__block--first-list {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1.125rem;
@@ -576,54 +490,41 @@ button {
   color: #000000;
   padding: 1.875rem 0 0 1.25rem;
 }
-
 @media (max-width: 61.99875rem) {
   .info__block--first-list {
     font-size: 0.9375rem;
   }
 }
-
 @media (max-width: 29.99875rem) {
   .info__block--first-list {
     padding: 0.625rem 0 0 1.25rem;
   }
 }
-
 .info__block--first-img {
   position: absolute;
   bottom: 2.5rem;
   right: 2.5rem;
 }
-
 .info__block--second {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #4453D9;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   width: 45%;
   height: 27.0625rem;
   padding: calc(20px + 10 * ((100vw - 320px) / 1440));
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 @media (max-width: 47.99875rem) {
   .info__block--second {
     width: 100%;
   }
 }
-
 .info__block--second-title {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 600;
   font-size: 1.25rem;
@@ -632,13 +533,11 @@ button {
   color: #182851;
   padding-bottom: 1.875rem;
 }
-
 @media (max-width: 1100px) {
   .info__block--second-title {
     font-size: 1.1875rem;
   }
 }
-
 @media (max-width: 61.99875rem) {
   .info__block--second-title {
     font-size: 0.9375rem;
@@ -646,9 +545,8 @@ button {
     font-weight: 600;
   }
 }
-
 .info__block--second-list {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1.125rem;
@@ -657,57 +555,42 @@ button {
   padding: 0.625rem 0 0 1.25rem;
   list-style-type: decimal;
 }
-
 @media (max-width: 1100px) {
   .info__block--second-list br {
     display: none;
   }
 }
-
 @media (max-width: 61.99875rem) {
   .info__block--second-list {
     font-size: 0.9375rem;
   }
 }
-
 .info__block--second-img {
   position: absolute;
   bottom: 2.5rem;
   right: 2.5rem;
 }
-
 .info__block--third {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #4453D9;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   width: 45%;
   height: 27.0625rem;
   padding: calc(20px + 20 * ((100vw - 320px) / 1440));
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 @media (max-width: 47.99875rem) {
   .info__block--third {
     width: 100%;
   }
 }
-
 .info__block--third-title {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1.125rem;
@@ -715,19 +598,17 @@ button {
   color: #000000;
   padding-bottom: 1.5625rem;
 }
-
 @media (max-width: 61.99875rem) {
   .info__block--third-title br {
     display: none;
   }
 }
-
 .info__block--third-button {
   background: #C8CC00;
   border-radius: 8px;
   width: 14rem;
   height: 3.1875rem;
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -735,35 +616,25 @@ button {
   text-align: center;
   color: #000000;
 }
-
 .info__block--third-img {
   position: absolute;
   bottom: 2.5rem;
 }
 
 .mission {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   padding-bottom: 3.75rem;
   border-bottom: 4px solid #FD591F;
 }
-
 @media (max-width: 47.99875rem) {
   .mission {
     border-bottom: 2px solid #FD591F;
   }
 }
-
 .mission__title {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1.75rem;
@@ -771,204 +642,122 @@ button {
   color: #4453D9;
   padding: 5rem 0 2.8125rem 0;
 }
-
 @media (max-width: 29.99875rem) {
   .mission__title {
     font-size: 1.5rem;
   }
 }
-
 .mission__block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: calc(20px + 130 * ((100vw - 320px) / 1440));
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1.25rem;
   line-height: 151.9%;
 }
-
 @media (max-width: 61.99875rem) {
   .mission__block br {
     display: none;
   }
 }
-
 @media (max-width: 47.99875rem) {
   .mission__block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
-
 .mission__block span {
   color: #000000;
 }
-
 .mission__block a {
   color: #CE4040;
 }
-
 .mission__block-first {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 1.875rem;
 }
-
 .mission__block-second {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 2.5rem;
 }
 
 .footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 1.875rem;
   padding: 2.1875rem 0 3.4375rem 0;
 }
-
 .footer__logo {
   width: 5rem;
   height: 2.1875rem;
 }
-
 .footer__block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 @media (max-width: 61.99875rem) {
   .footer__block {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 0.3125rem;
   }
 }
-
 .footer__block--menu {
   gap: 0.3125rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  flex-direction: column;
+  order: 1;
 }
-
 .footer__block--menu span {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.3125rem;
   color: #000000;
 }
-
 .footer__block--menu-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 0.3125rem;
 }
-
 .footer__block--menu-list-item {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.3125rem;
   color: #000000;
 }
-
 .footer__block--social {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   gap: 1.25rem;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  order: 2;
 }
-
 @media (max-width: 61.99875rem) {
   .footer__block--social {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+    order: 3;
   }
 }
-
 .footer__block--social-icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .footer__block--link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   gap: 0.3125rem;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+  order: 3;
 }
-
 @media (max-width: 61.99875rem) {
   .footer__block--link {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    order: 2;
   }
 }
-
 .footer__block--link-item {
-  font-family: 'TT Travels';
+  font-family: "TT Travels";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
@@ -982,4 +771,18 @@ button {
   line-height: 1.25rem;
   padding-top: 0.3125rem;
 }
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 61.99875rem) {
+  .just-validate-error-label {
+    font-size: 0.8125rem;
+  }
+}
+@media (max-width: 29.99875rem) {
+  .just-validate-error-label {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 295px) {
+  .just-validate-error-label {
+    font-size: 0.6875rem;
+  }
+}/*# sourceMappingURL=style.css.map */
