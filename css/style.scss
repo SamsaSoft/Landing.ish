@@ -56,9 +56,16 @@ $mobileSmall: rem(479.98); // телефоны s
   //-------header--------
 
   .header {
+    position: fixed;
+    width: $maxWidthContainer;
+    z-index: 5;
+    background: white;
     display: flex;
     height: rem(100);
     border-bottom: 4px solid #FD591F;
+     @media (max-width: $pc) {
+        width: 86.5%;
+      }
       @media (max-width: $tablet) {
         height: rem(90);
       }
@@ -66,6 +73,7 @@ $mobileSmall: rem(479.98); // телефоны s
         flex-direction: column;
         gap: rem(10);
         border-bottom: 2px solid #FD591F;
+        width: 86.8%;
       }
       &__block {
         width: 100%;
@@ -139,13 +147,16 @@ $mobileSmall: rem(479.98); // телефоны s
     gap: rem(8);
     background: #26A4E3;
     border-radius: rem(8);
-      @media (max-width: $mobile) {
-        padding: rem(3) rem(16);
-      }
+    @media (max-width: $mobile) {
+      padding: rem(3) rem(12);
+    }
+    @media (max-width: $mobileSmall) {
+      padding: rem(2) rem(8);
+    }
       &__logo {
         @media (max-width: $mobile) {
-          width: rem(18);
-          height: rem(18);
+          width: rem(20);
+          height: rem(20);
         }
       }
 
@@ -157,7 +168,7 @@ $mobileSmall: rem(479.98); // телефоны s
         line-height: rem(22);
         color: #FFFFFF;
           @media (max-width: $mobile) {
-            font-size: rem(16);
+
           }
       }
 }
@@ -169,13 +180,13 @@ $mobileSmall: rem(479.98); // телефоны s
 
 
 .main {
-    padding-top: rem(70);
+    padding-top: rem(150);
     @include adaptive-value("padding-bottom", 75, 40);
     border-bottom: 4px solid #FD591F;
       @media (max-width: $mobile) {
          border-bottom: 2px solid #FD591F;
          text-align: center;
-         padding-top: rem(40);
+         padding-top: rem(120);
       }
       &__title {
 
@@ -235,8 +246,9 @@ $mobileSmall: rem(479.98); // телефоны s
             }
 
             &-img {
-             height: rem(380);
-
+             height: rem(430);
+             display: flex;
+             justify-content: end;
                 @media (max-width: $tablet) {
                   position: relative;
                   height: rem(280);
@@ -255,13 +267,15 @@ $mobileSmall: rem(479.98); // телефоны s
                 @media (max-width: $mobile) {
                   height: rem(350);
                   margin: rem(50) 0;
+                  justify-content: center;
                 }
                 @media (max-width: $mobileSmall) {
                   height: rem(240);
                   margin: rem(50) 0;
                 }
               &-picture {
-                width: 97%;
+                // width: 100%;
+                // height: 100%;
                  @media (max-width: $tablet) {
                    height: 80%;
                  }
@@ -305,14 +319,18 @@ $mobileSmall: rem(479.98); // телефоны s
             width: 100%;
             height: rem(35);
               @media (max-width: $mobile) {
-                  width: 65%;
+                  width: 75%;
+              }
+              @media (max-width: $mobileSmall) {
+                  width: 85%;
               }
                 &-input {
-                  width: 93%;
+                  width: 87%;
                   height: 100%;
                   border-radius: rem(8) rem(24) rem(24) rem(8);
                   border-color: #4453D9;
                   padding-left: rem(18);
+                  padding-right: rem(45);
                   font-family: 'TT Travels';
                   font-style: normal;
                   font-weight: 500;
@@ -321,16 +339,37 @@ $mobileSmall: rem(479.98); // телефоны s
                   color: rgba(0, 0, 0, 0.65);
                   outline: none;
                     @media (max-width: $pc) {
-                        width: 90%;;
+                        width: 85%;
+                    }
+                    @media (max-width: 1300px) {
+                        width: 82%;
+                    }
+                    @media (max-width: 1120px) {
+                        width: 79%;
                     }
                     @media (max-width: $tablet) {
-                        width: 87%;
+                      width: 81%;
+                    }
+                    @media (max-width: 880px) {
+                      width: 78%;
                     }
                     @media (max-width: $mobile) {
-                       width: 88%;
-                    }
-                    @media (max-width: $mobileSmall) {
                        width: 83%;
+                    }
+                    @media (max-width: 672px) {
+                       width: 79%;
+                    }
+                    @media (max-width: 550px) {
+                       width: 75%;
+                    }
+                    @media (max-width: 410px) {
+                      width: 72%;
+                    }
+                    @media (max-width: 360px) {
+                      width: 65%;
+                    }
+                    @media (max-width: 290px) {
+                      width: 62%;
                     }
                 }
 
@@ -738,5 +777,14 @@ $mobileSmall: rem(479.98); // телефоны s
   font-size: rem(15);
   line-height: rem(20);
   padding-top: rem(5);
+    @media (max-width: $tablet) {
+      font-size: rem(13);
+    }
+    @media (max-width: $mobileSmall) {
+      font-size: rem(12);
+    }
+    @media (max-width: 300px) {
+      font-size: rem(11);
+    }
 }
 
