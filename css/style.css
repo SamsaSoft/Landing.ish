@@ -59,6 +59,7 @@ button {
             flex-direction: column;
     gap: 0.625rem;
     border-bottom: 2px solid #FD591F;
+    width: 86.8%;
   }
 }
 
