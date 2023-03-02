@@ -28,11 +28,21 @@ button {
 }
 
 .header {
+  position: fixed;
+  width: 1366px;
+  z-index: 5;
+  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 6.25rem;
   border-bottom: 4px solid #FD591F;
+}
+
+@media (max-width: 92.5rem) {
+  .header {
+    width: 86.5%;
+  }
 }
 
 @media (max-width: 61.99875rem) {
@@ -157,14 +167,20 @@ button {
 
 @media (max-width: 47.99875rem) {
   .telegram-link {
-    padding: 0.1875rem 1rem;
+    padding: 0.1875rem 0.75rem;
+  }
+}
+
+@media (max-width: 29.99875rem) {
+  .telegram-link {
+    padding: 0.125rem 0.5rem;
   }
 }
 
 @media (max-width: 47.99875rem) {
   .telegram-link__logo {
-    width: 1.125rem;
-    height: 1.125rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 
@@ -177,14 +193,8 @@ button {
   color: #FFFFFF;
 }
 
-@media (max-width: 47.99875rem) {
-  .telegram-link__title {
-    font-size: 1rem;
-  }
-}
-
 .main {
-  padding-top: 4.375rem;
+  padding-top: 9.375rem;
   padding-bottom: calc(40px + 35 * ((100vw - 320px) / 1440));
   border-bottom: 4px solid #FD591F;
 }
@@ -193,7 +203,7 @@ button {
   .main {
     border-bottom: 2px solid #FD591F;
     text-align: center;
-    padding-top: 2.5rem;
+    padding-top: 7.5rem;
   }
 }
 
@@ -284,7 +294,13 @@ button {
 }
 
 .main__block-img {
-  height: 23.75rem;
+  height: 26.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 @media (max-width: 61.99875rem) {
@@ -308,6 +324,9 @@ button {
   .main__block-img {
     height: 21.875rem;
     margin: 3.125rem 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
@@ -316,10 +335,6 @@ button {
     height: 15rem;
     margin: 3.125rem 0;
   }
-}
-
-.main__block-img-picture {
-  width: 97%;
 }
 
 @media (max-width: 61.99875rem) {
@@ -383,16 +398,23 @@ button {
 
 @media (max-width: 47.99875rem) {
   .main .main-form__block {
-    width: 65%;
+    width: 75%;
+  }
+}
+
+@media (max-width: 29.99875rem) {
+  .main .main-form__block {
+    width: 85%;
   }
 }
 
 .main .main-form__block-input {
-  width: 93%;
+  width: 87%;
   height: 100%;
   border-radius: 0.5rem 1.5rem 1.5rem 0.5rem;
   border-color: #4453D9;
   padding-left: 1.125rem;
+  padding-right: 2.8125rem;
   font-family: 'TT Travels';
   font-style: normal;
   font-weight: 500;
@@ -404,25 +426,67 @@ button {
 
 @media (max-width: 92.5rem) {
   .main .main-form__block-input {
-    width: 90%;
+    width: 85%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .main .main-form__block-input {
+    width: 82%;
+  }
+}
+
+@media (max-width: 1120px) {
+  .main .main-form__block-input {
+    width: 79%;
   }
 }
 
 @media (max-width: 61.99875rem) {
   .main .main-form__block-input {
-    width: 87%;
+    width: 81%;
+  }
+}
+
+@media (max-width: 880px) {
+  .main .main-form__block-input {
+    width: 78%;
   }
 }
 
 @media (max-width: 47.99875rem) {
   .main .main-form__block-input {
-    width: 88%;
+    width: 83%;
   }
 }
 
-@media (max-width: 29.99875rem) {
+@media (max-width: 672px) {
   .main .main-form__block-input {
-    width: 83%;
+    width: 79%;
+  }
+}
+
+@media (max-width: 550px) {
+  .main .main-form__block-input {
+    width: 75%;
+  }
+}
+
+@media (max-width: 410px) {
+  .main .main-form__block-input {
+    width: 72%;
+  }
+}
+
+@media (max-width: 360px) {
+  .main .main-form__block-input {
+    width: 65%;
+  }
+}
+
+@media (max-width: 290px) {
+  .main .main-form__block-input {
+    width: 62%;
   }
 }
 
@@ -981,5 +1045,23 @@ button {
   font-size: 0.9375rem;
   line-height: 1.25rem;
   padding-top: 0.3125rem;
+}
+
+@media (max-width: 61.99875rem) {
+  .just-validate-error-label {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 29.99875rem) {
+  .just-validate-error-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .just-validate-error-label {
+    font-size: 0.6875rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
